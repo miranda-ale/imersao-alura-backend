@@ -1,12 +1,15 @@
 import express from "express";
 import routes from "./src/routes/postsRoutes.js";
+import { config } from 'dotenv-safe';
+config();
 
 const app = express();
+const PORT = process.env.PORT;
 
 routes(app);
 
 // Inicia o servidor na porta 3000 e exibe mensagem de inicialização
-app.listen(process.env.PORT, () => {
-    console.log(`Servidor escutando na porta ${process.env.PORT}` +
-        `\n http://localhost:${process.env.PORT}`)
+app.listen(PORT, () => {
+    console.log(`Servidor escutando na porta ${PORT}` +
+        `\n http://localhost:${PORT}`)
 });
