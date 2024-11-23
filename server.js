@@ -4,6 +4,7 @@ import { config } from 'dotenv-safe';
 config();
 
 const app = express();
+
 const PORT = process.env.PORT;
 
 routes(app);
