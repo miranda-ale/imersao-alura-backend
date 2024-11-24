@@ -4,9 +4,9 @@ import { config } from 'dotenv-safe';
 config();
 
 const app = express();
-
 const PORT = process.env.PORT;
 
+app.use(express.static("uploads"))
 routes(app);
 
 // Inicia o servidor na porta 3000 e exibe mensagem de inicialização
